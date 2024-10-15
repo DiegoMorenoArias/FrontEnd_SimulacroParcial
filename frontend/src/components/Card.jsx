@@ -35,16 +35,18 @@ const Card = ({games, refreshGames}) => {
       const handleEditGameClick = (id) => {
         navigate(`/editGame/${id}`);
       };
-      
+
     return (
         <div className="Card">
             {games.length > 0 ? (
                 games.map((sport) => (
                     <div key={sport.id}>
                         <h1>{sport.title}</h1>
-                        <button onClick={() => handleGameRedirect(sport.id)}>Detalles</button>
-                        <button onClick={() => handleDeleteClick(sport.id)}>Borrar</button>
-                        <button onClick={() => handleEditGameClick(sport.id)}>Editar</button>
+                        <div id="buttonsDiv">
+                            <button onClick={() => handleGameRedirect(sport.id)}>Detalles</button>
+                            <button onClick={() => handleDeleteClick(sport.id)}>Borrar</button>
+                            <button onClick={() => handleEditGameClick(sport.id)}>Editar</button>
+                        </div>
                     </div>
                 ))
             ) : (

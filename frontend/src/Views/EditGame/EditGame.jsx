@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import "./styles.css";
+import "./EditGame.css";
 import getGameByID from "../../Functions/functions.js";
 
 const EditGame = () => {
@@ -80,14 +80,22 @@ const EditGame = () => {
           />
         </div>
       </div>
+        <div id="buttonsDiv">
+            <button
+                className="comeBack-button"
+                onClick={() => navigate(-1)}
+            >
+                Volver
+            </button>
 
-      <button
-        className="edit-button"
-        onClick={handleEditGame}
-        disabled={buttonIsDisabled}
-      >
-        Editar Juego
-      </button>
+            <button
+                className="edit-button"
+                onClick={handleEditGame}
+                disabled={buttonIsDisabled}
+            >
+                Aceptar cambios
+            </button>
+        </div>
     </div>
   );
 };

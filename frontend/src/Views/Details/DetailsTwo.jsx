@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./styles.css";
+import "./Details.css";
 import { useNavigate, useParams } from "react-router-dom";
 import getGameByID from "../../Functions/functions.js";
 
