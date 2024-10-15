@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./styles.css";
 import { useNavigate, useParams } from "react-router-dom";
-
-const getGameByID = async (id) => {
-  const gameFetch = await fetch(`http://localhost:3000/api/games/${id}`);
-  const game = await gameFetch.json();
-  return game;
-};
+import getGameByID from "../../Functions/functions.js";
 
 const Details = () => {
   const [game, setGame] = useState();
@@ -19,7 +14,7 @@ const Details = () => {
 
   return (
     <div className="container">
-      <h1>Detalle</h1>
+      <h1>Detalles</h1>
       {game && (
         <div>
           <div className="detail">

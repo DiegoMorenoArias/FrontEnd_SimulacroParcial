@@ -1,5 +1,5 @@
 import './App.css';
-import Card from './components/Card.jsx';
+import Card from '../../components/Card.jsx';
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import './App.css';
@@ -37,7 +37,9 @@ const App = () => {
       </div>
       {games.length ? (
         <div className="home-grid-cards">
-          <Card />
+          <Card 
+          games={games}
+          refreshGames={refreshGames}/>
         </div>
       ) : (
         <div className="home-no-games">No hay juegos para mostrar</div>

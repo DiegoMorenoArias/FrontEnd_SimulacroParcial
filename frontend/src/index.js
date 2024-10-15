@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
-import App from './App.jsx';
+import App from './Views/App/App.jsx';
 import reportWebVitals from './reportWebVitals';
-import Card from "./components/Card.jsx";
 import Details from "./Views/Details/DetailsTwo.jsx";
 import AddGame from "./Views/AddGame/AddGame.jsx";
+import EditGame from "./Views/EditGame/EditGame.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +15,7 @@ root.render(
       <Route path="/" element={<App />}/>
       <Route path="/game/:id" element={<Details />} />
       <Route path="/addGame" element={<AddGame />} />
+      <Route path="/editGame/:id" element={<EditGame />} />
     </Routes>
   </BrowserRouter>
 );
