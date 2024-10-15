@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import getAllGames from "./functions.js";
+import getAllGames from "../functions.js";
 import "./Card.css";
 import { useNavigate } from 'react-router-dom';
 
@@ -18,6 +18,7 @@ function Card() {
     const handleGameRedirect = (id) => {
         navigate(`/game/${id}`);
     };
+    
 
     return (
         <div className="Card">

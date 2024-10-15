@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+/* Estilos generales */
+body {
+  font-family: 'Press Start 2P', cursive;
   background-color: #282c34;
-  min-height: 100vh;
+  color: #fff;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-around;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 1.8rem; /* Tamaño de fuente más pequeño */
+  text-align: center;
+  color: #ffcc00;
+  text-shadow: 2px 2px 0px #ff0066, 4px 4px 0px #6600ff;
+}
+
+/* Contenedor de título */
+.home-title-wrapp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem; /* Reducir margen inferior */
+  padding: 0 1rem; /* Agregar padding lateral */
+}
+
+/* Botón agregar juego */
+.add-game-button {
+  background-color: #ff0066;
   color: white;
+  font-size: 0.9rem; /* Tamaño más pequeño */
+  padding: 6px 12px; /* Reducir padding */
+  border: 2px solid #6600ff; /* Borde más fino */
+  border-radius: 6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  font-family: 'Press Start 2P', cursive;
 }
 
-.App-link {
-  color: #61dafb;
+.add-game-button:hover {
+  background-color: #ffcc00;
+  transform: scale(1.05);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Grilla de cartas de juegos */
+.home-grid-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas por defecto */
+  gap: 1rem; /* Espacio entre cartas */
+  width: 90%; /* Aprovechar más el espacio */
+  margin: 0 auto;
+}
+
+.home-grid-cards .card {
+  background-color: #222;
+  border: 2px solid #ff0066;
+  border-radius: 6px;
+  padding: 10px; /* Reducir padding */
+  text-align: center;
+  box-shadow: 2px 2px 0px #6600ff, 4px 4px 0px #ffcc00; /* Sombra más pequeña */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  word-wrap: break-word; /* Asegurar que el texto no se desborde */
+}
+
+.home-grid-cards .card:hover {
+  transform: scale(1.05);
+  box-shadow: 2px 2px 0px #6600ff, 3px 3px 0px #ffcc00; /* Reducir sombra */
+}
+
+/* Títulos de las cartas */
+.home-grid-cards .card h2 {
+  font-size: 0.9rem; /* Reducir el tamaño de los títulos */
+  margin: 0.5rem 0;
+}
+
+/* Estilo para cuando no hay juegos */
+.home-no-games {
+  font-size: 1rem; /* Reducir tamaño de fuente */
+  color: #ff0066;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .home-grid-cards {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
   }
-  to {
-    transform: rotate(360deg);
+
+  .add-game-button {
+    font-size: 0.8rem; /* Reducir el tamaño del botón */
+    padding: 5px 10px;
   }
 }
+
+@media (max-width: 480px) {
+  .home-grid-cards {
+    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Reducir el tamaño del título en pantallas pequeñas */
+  }
+
+  .add-game-button {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+}
+
+/* Tipografía retro */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
