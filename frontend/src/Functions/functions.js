@@ -1,16 +1,16 @@
-const getGameByID = async (id) => {
+const getPetByID = async (id) => {
     try {
-      const gameFetch = await fetch(`http://localhost:3000/api/games/${id}`);
-      if (!gameFetch.ok) {
-        throw new Error("Error fetching the game data");
+      const petFetch = await fetch(`http://localhost:3005/api/pets/${id}`);
+      if (!petFetch.ok) {
+        throw new Error("Error fetching the pet data");
       }
-      const game = await gameFetch.json();
-      return game;
+      const pet = await petFetch.json();
+      return pet;
     } catch (error) {
       console.error("Error fetching game:", error);
       return null; // Devuelve null si hay un error
     }
   };
   
-  export default getGameByID;
+export default getPetByID;
   

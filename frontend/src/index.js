@@ -5,17 +5,18 @@ import './index.css';
 import App from './Views/App/App.jsx';
 import reportWebVitals from './reportWebVitals';
 import Details from "./Views/Details/DetailsTwo.jsx";
-import AddGame from "./Views/AddGame/AddGame.jsx";
-import EditGame from "./Views/EditGame/EditGame.jsx";
+import AddPets from "./Views/AddPets/AddPets.jsx";
+import EditPets from "./Views/EditPets/EditPets.jsx";
+import refreshPets from "./Views/App/App.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}/>
-      <Route path="/game/:id" element={<Details />} />
-      <Route path="/addGame" element={<AddGame />} />
-      <Route path="/editGame/:id" element={<EditGame />} />
+      <Route path="/pet/:id" element={<Details/>} />
+      <Route path="/addPet" element={<AddPets />} />
+      <Route path="/editPet/:id" element={<EditPets />} />
     </Routes>
   </BrowserRouter>
 );

@@ -1,70 +1,79 @@
 /* Tipografía retro */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-/* Estilos generales */
 body {
   font-family: 'Press Start 2P', cursive;
-  background-color: #282c34;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: #f2f2f2;
 }
 
-h1 {
-  font-size: 2rem;
-  text-align: center;
-  color: #ffcc00;
-  text-shadow: 2px 2px 0px #ff0066, 4px 4px 0px #6600ff;
-  margin-bottom: 20px;
-}
-
-/* Contenedor principal */
-.container {
-  background-color: #222;
-  border: 2px solid #6600ff;
-  border-radius: 8px;
-  padding: 20px;
+input[type="text"],
+input[type="number"] {
   width: 90%;
-  max-width: 600px;
-  box-shadow: 4px 4px 0px #ff0066, 6px 6px 0px #ffcc00;
-}
-
-/* Estilo de detalles */
-.detail {
-  margin: 15px 0;
-}
-
-.detail-title {
-  color: #ffcc00;
-  text-shadow: 2px 2px 0px #ff0066;
-}
-
-.detail-content {
-  color: #ff0066;
-  text-shadow: 2px 2px 0px #6600ff;
-}
-
-/* Botón de volver */
-.back-button {
-  background-color: #ff0066;
-  color: white;
-  font-size: 1rem;
-  padding: 10px 20px;
-  border: 2px solid #6600ff;
-  border-radius: 6px;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  display: block;
-  margin: 20px auto 0 auto;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #f39c12;
+  border-radius: 8px;
+  background-color: #333;
+  color: #fff;
   font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
 }
 
-.back-button:hover {
-  background-color: #ffcc00;
-  transform: scale(1.05);
+button {
+  padding: 12px 24px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #38cacf;
+  border: 2px solid #e84393;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  background-color: #32a4a8;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.add-button:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+#buttonsDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+/* Estilo para la caja de detalles */
+.details-card {
+  background-color: #2c2c2c;
+  border: 3px solid #f39c12;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 30px;
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Texto con efecto retro */
+.details-card h2 {
+  font-size: 22px;
+  color: #f39c12;
+  text-shadow: 2px 2px #e84393;
+}
+
+.details-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #fff;
 }

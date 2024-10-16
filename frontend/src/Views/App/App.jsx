@@ -4,45 +4,44 @@ import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import './App.css';
 
-const getGames = async () => {
-  const gamesFetch = await fetch("http://localhost:3000/api/games");
-  const games = await gamesFetch.json();
-  return games;
+const getPets = async () => {
+  const petsFetch = await fetch("http://localhost:3005/api/pets");
+  const pets = await petsFetch.json();
+  return pets;
 };
 
 const App = () => {
-  const [games, setGames] = useState([]);
+  const [pets, setPets] = useState([]);
   const navigate = useNavigate();
 
-  const refreshGames = async () => {
-    const updatedGames = await getGames();
-    setGames(updatedGames);
+  const refreshPets = async () => {
+    const updatedPets = await getPets();
+    setPets(updatedPets);
   };
 
   useEffect(() => {
-    refreshGames();
+    refreshPets();
   }, []);
 
-  const handleAddGameClick = () => {
-    navigate("/addGame");
+  const handleAddPetClick = () => {
+    navigate("/addPet");
   };
 
   return (
     <div>
       <div className="home-title-wrapp">
-        <h1>Juegos COI</h1>
-        <button onClick={handleAddGameClick} className="add-game-button">
-          Agregar Juego
+        <h1>Adopta-Me</h1>
+        <button onClick={handleAddPetClick} className="add-game-button">
+          Agregar mascota
         </button>
       </div>
-      {games.length ? (
+      {pets.length ? (
         <div className="home-grid-cards">
           <Card 
-          games={games}
-          refreshGames={refreshGames}/>
+          pets={pets}/>
         </div>
       ) : (
-        <div className="home-no-games">No hay juegos para mostrar</div>
+        <div className="home-no-games">No hay mascotitas para mostrar</div>
       )}
     </div>
   );

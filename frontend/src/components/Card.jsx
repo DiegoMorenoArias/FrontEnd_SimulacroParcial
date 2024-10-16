@@ -1,56 +1,29 @@
 import "./Card.css";
 import { useNavigate } from 'react-router-dom';
 
-const deleteGame = async (id) => {
-    const gameDelete = await fetch("http://localhost:3000/api/games/" + id, {
-      method: "DELETE",
-    });
-  
-    return gameDelete;
-  };
-
-/*const editGame = async (id) => {
-const gameEdit = await fetch("http://localhost:3000/api/games/" + id, {
-    method: "PUT"
-});
-
-return gameDelete;
-};*/
-
-const Card = ({games, refreshGames}) => {
+const Card = ({pets}) => {
     const navigate = useNavigate();
+    console.log(pets);
 
-
-    const handleGameRedirect = (id) => {
-        navigate(`/game/${id}`);
+    const handlePetRedirect = (id) => {
+        navigate(`/pet/${id}`);
     };
-    
-    const handleDeleteClick = async (id) => {
-        const response = await deleteGame(id);
-        if (response.ok) {
-          refreshGames();
-        }
-      };
-
-      const handleEditGameClick = (id) => {
-        navigate(`/editGame/${id}`);
-      };
 
     return (
         <div className="Card">
-            {games.length > 0 ? (
-                games.map((sport) => (
-                    <div key={sport.id}>
-                        <h1>{sport.title}</h1>
+            {pets.length > 0 ? (
+                pets.map((pet) => (
+                    <div key={pet.id}>
+                        <img src={pet.photo} alt={pet.name}></img>
+                        <h2>{`${pet.name}`}</h2>
+                        <h2>{pet.age}</h2>
                         <div id="buttonsDiv">
-                            <button onClick={() => handleGameRedirect(sport.id)}>Detalles</button>
-                            <button onClick={() => handleDeleteClick(sport.id)}>Borrar</button>
-                            <button onClick={() => handleEditGameClick(sport.id)}>Editar</button>
+                            <button onClick={() => handlePetRedirect(pet.id)}>Ver Detalles</button>
                         </div>
                     </div>
                 ))
             ) : (
-                <div>Buscando Deportes...</div>
+                <div>Buscando mascotas...</div>
             )}
         </div>
     );
