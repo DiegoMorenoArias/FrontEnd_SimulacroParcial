@@ -61,14 +61,21 @@ const AddGame = () => {
           />
         </div>
       </div>
-
-      <button
-        className="add-button"
-        onClick={handleAddGame}
-        disabled={buttonIsDisabled}
-      >
-        Agregar Juego
-      </button>
+      <div id="buttonsDiv">
+        <button
+                  className="comeBack-button"
+                  onClick={() => navigate(-1)}
+              >
+                  Volver
+        </button>
+        <button
+          className="add-button"
+          onClick={handleAddGame}
+          disabled={buttonIsDisabled}
+        >
+          Agregar Juego
+        </button>
+      </div>
     </div>
   );
 };

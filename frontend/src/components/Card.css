@@ -9,11 +9,6 @@
     flex-direction: column;
 }
 
-#buttonsDiv{
-    display: flex;
-    flex-direction: row;
-    border: none;
-}
 button {
     background-color: #ff0066;
     color: white;
@@ -32,3 +27,9 @@ button:hover {
     transform: scale(1.05);
   }
   
+#buttonsDiv{
+    display: flex;
+    flex-direction: row;
+    border: none;
+    gap: 10px;
+}
